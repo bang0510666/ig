@@ -1,7 +1,7 @@
 import csv
 
 # 讀取帳號清單CSV文件
-with open('C:/Users/05731/OneDrive/桌面/names/names.csv', newline='') as file:
+with open('names.csv', newline='') as file:
     csv_reader = csv.reader(file)
 
     # 初始化統計數量的變數
@@ -39,7 +39,7 @@ with open('C:/Users/05731/OneDrive/桌面/names/names.csv', newline='') as file:
     print("15個字元以上：", count_over_15, "個")
 
     # 寫入帳號字元數大於10的清單到CSV文件
-    with open('accounts_over_10.csv', 'w', newline='') as output_file:
+    with open('accounts_over_10.csv', 'w', newline='',encoding="utf-8") as output_file:
         csv_writer = csv.writer(output_file)
         csv_writer.writerow(['帳號'])
         csv_writer.writerows([[account] for account in accounts_over_10])
